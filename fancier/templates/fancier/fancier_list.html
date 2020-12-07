@@ -1,6 +1,15 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-    <h1>Hello in fancier list</h1>
+    <di class="fanciers">
+        {% for fancier in fanciers %}
+            <div class="fancier">
+                <img src="{{fancier.profilePicture.url}}" width="200" height="150"/>
+                <h4>{{fancier.name}}</h4>
+                <p>Country : {{fancier.country}}</p>
+                <p>Join Date : {{fancier.joinedDate}}</p>
+            </div>
+        {% endfor %}
+    </di>
 
 {% endblock %}    
