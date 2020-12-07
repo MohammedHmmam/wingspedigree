@@ -10,6 +10,7 @@ class Fancier(models.Model):
     region = models.CharField(max_length =30)
     street = models.CharField(max_length = 100)
     joinedDate = models.DateTimeField(auto_now_add=True)
+    profilePicture = models.ImageField(default = 'defaultfancier.png' , blank = True)
 
     def __str__(self):
         return self.name
