@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def fancier_list(request):
+    return render(request , 'fancier/fancier_list.html')
