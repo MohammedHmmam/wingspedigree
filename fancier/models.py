@@ -3,7 +3,7 @@ from django.db import models
 class Fancier(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField()
-    birthDate = models.DateField(auto_now = True , auto_now_add=False)
+    #birthDate = models.DateField(auto_now = True , auto_now_add=False)
     country = models.CharField(max_length=30)
     state = models.CharField(max_length=30)
     city = models.CharField(max_length=30)

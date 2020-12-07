@@ -1,0 +1,15 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+
+    <div class="new_fancier">
+        <h2>Add New Fancier</h2>
+        <form class="site-form" action="{% url 'fancier:new' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Create"/>
+
+        </form>
+    </div>
+
+{% endblock %}
