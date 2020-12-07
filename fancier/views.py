@@ -1,12 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from . models import Fancier
 from . import forms
 
 
 #Create new Fancier
 def new_fancier(request):
-    form = forms.NewFancier()
+    if request.method == 'POST':
+        form = forms.NewFancier(request.POST , request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('fancier:list')
+    else:
+        form = forms.NewFancier()
     return render(request , 'fancier/new_fancier.html' , {'form':form})
+
 
 #Show all fanciers
 def fancier_list(request):
