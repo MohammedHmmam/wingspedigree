@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <div class="fancier_details">
+        <div class="fancier">
+            <img src="{{ fancier.profilePicture.url }}" width="250" height="150"/>
+            <h3>{{fancier.name}}</h3>
+            <p><i>Country:</i>{{fancier.country}}</p>
+            <p><i>State:</i> {{fancier.state}} </p>
+            <p><i>City:</i> {{fancier.city}} </p>
+            <p><i>Region: </i> {{fancier.region}} </p>
+            <p><i>Joined Date: </i> {{fancier.joinedDate}} </p>
+        </div>
+    </div>
+
+{% endblock %}

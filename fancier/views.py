@@ -19,3 +19,8 @@ def new_fancier(request):
 def fancier_list(request):
     fanciers = Fancier.objects.all().order_by('joinedDate')
     return render(request , 'fancier/fancier_list.html' , {'fanciers':fanciers})
+
+#Show specific Fancier details
+def fancier_details(request , slug):
+    fancier = Fancier.objects.get(slug = slug)
+    return render(request , 'fancier/fancier_details.html' , {'fancier':fancier})
