@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+#Show All Pigeons
+def pigeons_list(request):
+    return render(request , 'pigeon/pigeons_list.html')
