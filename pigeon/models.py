@@ -7,13 +7,10 @@ class Pigeon(models.Model):
     sex = models.CharField(max_length=1)
     birthYear = models.CharField(max_length=6)
     ringNumber = models.CharField(max_length=20 , unique=True)
-    #father = models.CharField(max_length=20)
-    #mother = models.CharField(max_length=20)
-    #manager = models.ForeignKey('self', null=True, related_name='employee')
     father = models.ForeignKey('self' , null=True , default=None  , blank = True, related_name='pigeonFather', on_delete = models.PROTECT)
     mother = models.ForeignKey('self' , null=True , default=None ,  blank = True,related_name='pigeonMother' , on_delete=models.PROTECT)
     fancier = models.ForeignKey(Fancier , default=None , on_delete = models.PROTECT)
-    thumb = models.ImageField(default = 'defaultpigeon.jpg', blank = True)
+    thumb = models.ImageField(default = 'defaultpigeon.png', blank = True)
 
     def __str__(self):
         return self.name

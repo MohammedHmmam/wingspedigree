@@ -1,6 +1,14 @@
 {% extends 'base_layout.html' %}
 {% block content %}
 
-    <h1>Pigeons list</h1>
+    <div class="pigeons">
+        {% for pigeon in pigeons %}
+            <div class="pigeon" style="display: inline-block; text-align: center;">
+                <img src="{{ pigeon.thumb.url }}" width="250" height="200"/>
+                <p><b>Pigeon name: </b>{{pigeon.name}} </p>
+                <p><b>Ring Number:</b>{{pigeon.ringNumber}}</p>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}
