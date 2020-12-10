@@ -5,7 +5,7 @@
         {% for pigeon in pigeons %}
             <div class="pigeon" style="display: inline-block; text-align: center;">
                 <img src="{{ pigeon.thumb.url }}" width="250" height="200"/>
-                <p><b>Pigeon name: </b>{{pigeon.name}} </p>
+                <a href="{% url 'pigeon:details' slug=pigeon.slug %}"> <p><b>Pigeon name: </b>{{pigeon.name}} </p> </a>
                 <p><b>Ring Number:</b>{{pigeon.ringNumber}}</p>
             </div>
         {% endfor %}

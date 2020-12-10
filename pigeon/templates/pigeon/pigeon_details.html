@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+    <div class="pigeon-details">
+        <div class="pigeon">
+            <img src="{{ pigeon.thumb.url }}" width="500" height="400"/>
+            <h2>{{ pigeon.name }}</h2>
+            <p><b>Ring Number: </b> {{ pigeon.ringNumber }}</p>
+            <p><b>Birth Year: </b> {{pigeon.birthYear}}</p>
+            <p><b>Fancier: </b> {{pigeon.fancier}}</p>
+            <p><b>Father: </b> {{pigeon.father}}</p>
+            <p><b>Mother: </b> {{pigeon.mother}}</p>
+        </div>
+    </div>
+
+{% endblock %}
