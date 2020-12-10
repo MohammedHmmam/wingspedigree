@@ -11,6 +11,7 @@ class Pigeon(models.Model):
     mother = models.ForeignKey('self' , null=True , default=None ,  blank = True,related_name='pigeonMother' , on_delete=models.PROTECT)
     fancier = models.ForeignKey(Fancier , default=None , on_delete = models.PROTECT)
     thumb = models.ImageField(default = 'defaultpigeon.png', blank = True)
+    slug = models.SlugField(blank=True)
 
     def __str__(self):
         return self.name
