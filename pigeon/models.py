@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import Fancier
+from fancier.models import Fancier
 
 class Pigeon(models.Model):
     name = models.CharField(max_length=50)
@@ -9,7 +9,7 @@ class Pigeon(models.Model):
     ringNumber = models.CharField(max_length=20)
     father = models.CharField(max_length=20)
     mother = models.CharField(max_length=20)
-    fancier = models.ForeignKey(Fancier , default=None)
+    fancier = models.ForeignKey(Fancier , default=None , on_delete = models.PROTECT)
     thumb = models.ImageField(default = 'defaultpigeon.jpg', blank = True)
 
     def __str__(self):
